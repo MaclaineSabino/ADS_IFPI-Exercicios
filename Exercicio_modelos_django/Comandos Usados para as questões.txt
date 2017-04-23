@@ -1,0 +1,46 @@
+
+
+1 - Questão
+python manage.py shell
+
+
+from core.models import Cliente,Venda,ItemVenda,Fornecedor,Produto,Pedido,ItemPedido
+
+a) Cliente.objects.create(cpf='13034546789',nome='Renato Alves', endereco='Rua Ariosto 123, Dirceu',
+complemento='s/c',cidade='Teresina',estado='Piaui',cep='64078234',FoneResidencial='8632245678',
+FoneTrabalho='8632226789',RendaFamiliar=1250.80,email='nibble@hotmail.com')
+
+b)
+Fornecedor.objects.create(Cnpj='12343245678654345',Nome='Alimentos e Alimentos',Endereco='Rua Alves 123',
+Complemento='s\c',Cidade='Teresina',Estado='PI',Cep='64098678',
+Fone='863424567',Responsavel='Ritomar',Website='www.alimentos.com')
+
+c)
+
+Produto.objects.create(CodigoProduto=1,NomeProduto='Feijoada Bordon',Quantidade=80,MinQuantidade=10.0)
+
+d)
+
+Pedido.objects.create(DataPedido='2017-04-08',DataRecebimento='2017-04-12',PrecoTotal=100.00,CodigoFornecedor='12343245678654345')
+
+e)
+
+ItemPedido.objects.create(CodigoPedido=1,CodigoProduto=1,PrecoUnitario=10.0,Quantidade=10)
+
+f)
+Venda.objects.create(DataVenda='2017-04-06',ValorTotal=0,CodigoCliente='13034546789')
+
+g)
+ItemVenda.objects.create(CodigoVenda=4,CodigoProduto=1,PrecoUnitario=10.50,Quantidade=8)
+
+
+
+2 - Questão
+
+a) Cliente.objects.all()
+
+b) Cliente.objects.filter(CodigoCliente='13034546789')
+
+c)Pedido.objects.filter(Codigo=3)
+
+d)ItemPedido.objects.filter(CodigoPedido=2)
